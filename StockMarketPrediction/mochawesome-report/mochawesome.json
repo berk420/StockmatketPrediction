@@ -1,0 +1,176 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-02-10T07:57:49.996Z",
+    "end": "2024-02-10T07:58:19.007Z",
+    "duration": 29011,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cedc549f-dd4e-4ec4-b82b-56397bd3c457",
+      "title": "",
+      "fullFile": "C:\\Users\\berk\\Desktop\\StockMarketPrediction\\test\\Prediction.js",
+      "file": "\\test\\Prediction.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1a41577a-ed99-4a13-8f21-0c3b0ffa3f70",
+          "title": "Stockmarket",
+          "fullFile": "C:\\Users\\berk\\Desktop\\StockMarketPrediction\\test\\Prediction.js",
+          "file": "\\test\\Prediction.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "9bb40788-8694-4f81-8cc2-eaca86310c43",
+              "title": "prediction",
+              "fullFile": "C:\\Users\\berk\\Desktop\\StockMarketPrediction\\test\\Prediction.js",
+              "file": "\\test\\Prediction.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Analyz ofTUPRS",
+                  "fullTitle": "Stockmarket prediction Analyz ofTUPRS",
+                  "timedOut": null,
+                  "duration": 6521,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "try {\n    await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n                \n    await new Promise(resolve => setTimeout(resolve, 1000));\n\n    await driver.quit();\n}\ncatch(err) {\n    console.log(err);\n    driver.quit();\n}",
+                  "err": {},
+                  "uuid": "434ef27d-b9b1-47ea-870e-3164c3b2ffb7",
+                  "parentUUID": null,
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Analyz ofKCHOL",
+                  "fullTitle": "Stockmarket prediction Analyz ofKCHOL",
+                  "timedOut": null,
+                  "duration": 3772,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "try {\n    await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n                \n    await new Promise(resolve => setTimeout(resolve, 1000));\n\n    await driver.quit();\n}\ncatch(err) {\n    console.log(err);\n    driver.quit();\n}",
+                  "err": {},
+                  "uuid": "1cf0159e-0042-4534-802f-828093f523cf",
+                  "parentUUID": null,
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Analyz ofTKNSA",
+                  "fullTitle": "Stockmarket prediction Analyz ofTKNSA",
+                  "timedOut": null,
+                  "duration": 10332,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "try {\n    await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n                \n    await new Promise(resolve => setTimeout(resolve, 1000));\n\n    await driver.quit();\n}\ncatch(err) {\n    console.log(err);\n    driver.quit();\n}",
+                  "err": {},
+                  "uuid": "10e5ede0-b902-4554-a422-c7de1e91ed61",
+                  "parentUUID": null,
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Analyz ofREEDR",
+                  "fullTitle": "Stockmarket prediction Analyz ofREEDR",
+                  "timedOut": null,
+                  "duration": 5485,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "try {\n    await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n                \n    await new Promise(resolve => setTimeout(resolve, 1000));\n\n    await driver.quit();\n}\ncatch(err) {\n    console.log(err);\n    driver.quit();\n}",
+                  "err": {},
+                  "uuid": "1a5e813a-6bc4-496c-99f5-27927c0a0741",
+                  "parentUUID": null,
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "434ef27d-b9b1-47ea-870e-3164c3b2ffb7",
+                "1cf0159e-0042-4534-802f-828093f523cf",
+                "10e5ede0-b902-4554-a422-c7de1e91ed61",
+                "1a5e813a-6bc4-496c-99f5-27927c0a0741"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 26110,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": null
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

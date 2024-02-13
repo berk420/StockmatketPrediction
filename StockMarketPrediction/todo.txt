@@ -1,0 +1,4 @@
+fk için eşik değer hesaplama (bu hesaplama yöntemini kullanırken şey 10 tabanında logaritma kullan)
+
+tüm verileri (2sayfa) olabilir çevk ve bir diziye koy tek tek ayır 
+bu veri seti iki boyutlu etiketli veriler olsun
