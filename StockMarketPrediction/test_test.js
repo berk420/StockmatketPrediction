@@ -68,15 +68,12 @@ async function combobox_verileri(){
     console.log();
 
 
-
-
     toplam_oazkayank_value=parseInt(toplam_oazkayank_value);
     Dönem_Net_Kar_Zararı_value=parseInt(Dönem_Net_Kar_Zararı_value);
     Toplam_Kısa_Vadeli_Yükümlülükler_value=parseInt(Toplam_Kısa_Vadeli_Yükümlülükler_value);
     Toplam_Uzun_Vadeli_Yükümlülükler_value=parseInt(Toplam_Uzun_Vadeli_Yükümlülükler_value);
     Nakit_ve_Nakit_Benzerleri_value=parseInt(Nakit_ve_Nakit_Benzerleri_value);
     ticari_alacaklar_value=parseInt(ticari_alacaklar_value)
-
 
 
     let tüm_borçlar=Toplam_Kısa_Vadeli_Yükümlülükler_value+Toplam_Uzun_Vadeli_Yükümlülükler_value;
@@ -86,35 +83,38 @@ async function combobox_verileri(){
     console.log(" Nakit_ve_Nakit_Benzerleri_value / Dönem_Net_Kar_Zararı_value=fiyat kazanç oranı:",fiyatKazancOrani);
 
     const fiyatKazancOraniEsik = 15;//bu bence çok yüksek bir oran
-    if (fiyatKazancOrani > fiyatKazancOraniEsik) { //düzenlenecek
-      console.log("true");
+    if (fiyatKazancOrani < fiyatKazancOraniEsik) { //düzenlenecek
+      console.log("fiyatKazancOrani < fiyatKazancOraniEsik true");
     }
     else{
-      console.log("false");
+      console.log("fiyatKazancOrani < fiyatKazancOraniEsik false");
     }
 
     let borcOzkaynakOrani = Toplam_Kısa_Vadeli_Yükümlülükler_value + Toplam_Uzun_Vadeli_Yükümlülükler_value / toplam_oazkayank_value;
 
     const borcOzkaynakOraniEsik = 0.5;
 
-    if (borcOzkaynakOrani > borcOzkaynakOraniEsik) {
-      return false;
+    if (borcOzkaynakOrani < borcOzkaynakOraniEsik) {
+      console.log("borcOzkaynakOrani < borcOzkaynakOraniEsik true");
     }
     else{
-      
+      console.log("borcOzkaynakOrani < borcOzkaynakOraniEsik false");
     }
 
-debugger;
 
 
 const likitOranEsik = 2;
 
 let likitoran=(Nakit_ve_Nakit_Benzerleri_value+ticari_alacaklar_value)/Toplam_Kısa_Vadeli_Yükümlülükler_value;
 
-if(likitOranEsik>likitoran){
-  
-}
+//Likit oran, bir şirketin kısa vadeli borçlarını ödeme yeteneğini gösteren bir finansal orandır. 
 
+if(likitOranEsik < likitoran){
+  console.log("likitOranEsik < likitoran true");
+}
+else{
+  console.log("likitOranEsik < likitoran false");
+}
 
 
 

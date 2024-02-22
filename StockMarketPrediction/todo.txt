@@ -2,3 +2,6 @@ fk için eşik değer hesaplama (bu hesaplama yöntemini kullanırken şey 10 ta
 
 tüm verileri (2sayfa) olabilir çevk ve bir diziye koy tek tek ayır 
 bu veri seti iki boyutlu etiketli veriler olsun
+
+şu çıktılarda code gözükmesin yani düzgün güzel bir çıktı al gerekirse cutom report yap
+güzel çıktı yapıp tahminlerin ilk halini hazırladıktan sonra push yap
