@@ -90,8 +90,6 @@ describe("Stockmarket", async function () {
             console.log();
             addContext(this, `fiyatKazancOrani < fiyatKazancOraniEsik true ${stock}`);
 
-            fiyatKazancOrani=`fiyatKazancOrani < fiyatKazancOraniEsik true ${stock}`;
-            ss="ws";
           }
           else{
 

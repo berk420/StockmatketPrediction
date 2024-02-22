@@ -5,3 +5,5 @@ bu veri seti iki boyutlu etiketli veriler olsun
 
 şu çıktılarda code gözükmesin yani düzgün güzel bir çıktı al gerekirse cutom report yap
 güzel çıktı yapıp tahminlerin ilk halini hazırladıktan sonra push yap
+
+sektör sektör eşik değerleri hesaplanacak
