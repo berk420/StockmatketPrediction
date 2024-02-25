@@ -1,15 +1,15 @@
 {
   "stats": {
     "suites": 4,
-    "tests": 7,
+    "tests": 6,
     "passes": 1,
     "pending": 0,
-    "failures": 6,
-    "start": "2024-02-25T19:07:20.878Z",
-    "end": "2024-02-25T19:07:54.339Z",
-    "duration": 33461,
-    "testsRegistered": 7,
-    "passPercent": 14.285714285714285,
+    "failures": 5,
+    "start": "2024-02-25T19:31:47.461Z",
+    "end": "2024-02-25T19:32:16.982Z",
+    "duration": 29521,
+    "testsRegistered": 6,
+    "passPercent": 16.666666666666664,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "3b4374b3-bdc5-4a00-9ba4-3b30b102f077",
+      "uuid": "c70980fc-f702-459d-8d71-ca0e535f2e0b",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "65abad6a-caf4-4aba-a6eb-8bfea863aa7e",
+          "uuid": "1719c139-492f-4c67-a4f9-86a00a2cd54a",
           "title": "Petrol",
           "fullFile": "C:\\Users\\berk\\Desktop\\StockmatketPrediction\\StockMarketPrediction\\test\\Prediction.js",
           "file": "\\test\\Prediction.js",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "6fb28ecc-604f-47f2-b76b-a3f9e2e61a1e",
+              "uuid": "c1a99649-0342-41ec-a5b5-2d9d59219957",
               "title": "TUPRS",
               "fullFile": "C:\\Users\\berk\\Desktop\\StockmatketPrediction\\StockMarketPrediction\\test\\Prediction.js",
               "file": "\\test\\Prediction.js",
@@ -44,41 +44,23 @@
               "afterHooks": [],
               "tests": [
                 {
-                  "title": "make sure the data",
-                  "fullTitle": "Petrol TUPRS make sure the data",
+                  "title": "fiyatKazancOrani",
+                  "fullTitle": "Petrol TUPRS fiyatKazancOrani",
                   "timedOut": null,
-                  "duration": 3023,
+                  "duration": 6705,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
                   "fail": true,
                   "pending": false,
                   "context": null,
-                  "code": "let driver = await new Builder().forBrowser('chrome').build();\n        await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n        driver.manage().window().maximize();\n        let toplam_oazkayank=parseInt(await toplam_oazkayank_value(driver));\n        \n        await driver.quit();",
+                  "code": "let driver = await new Builder().forBrowser('chrome').build();\n        await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n        let Dönem_Net_Kar_Zararı_value=parseInt(await Dönem_Net_Kar_Zararı(driver,stock));\n        let Toplam_Kısa_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Kısa_Vadeli_Yükümlülükler(driver,stock));\n        let Toplam_Uzun_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Uzun_Vadeli_Yükümlülükler(driver,stock));\n        let Nakit_ve_Nakit_Benzerleri_value=parseInt(await Nakit_ve_Nakit_Benzerleri(driver,stock));\n        let tüm_borçlar=Toplam_Kısa_Vadeli_Yükümlülükler_value+Toplam_Uzun_Vadeli_Yükümlülükler_value;\n        console.log(\"Toplam_Kısa_Vadeli_Yükümlülükler_value+Toplam_Uzun_Vadeli_Yükümlülükler_value=tümborçlar:\",tüm_borçlar);\n    \n        let fiyatKazancOrani = Nakit_ve_Nakit_Benzerleri_value / Dönem_Net_Kar_Zararı_value;\n        console.log(\" Nakit_ve_Nakit_Benzerleri_value / Dönem_Net_Kar_Zararı_value=fiyat kazanç oranı:\",fiyatKazancOrani);\n    \n        const fiyatKazancOraniEsik = 15;//bu bence çok yüksek bir oran\n        if (fiyatKazancOrani < fiyatKazancOraniEsik) { //düzenlenecek\n          addContext(this, `fiyatKazancOrani < fiyatKazancOraniEsik true ${stock}`);\n        }\n        else{\n          fiyatKazancOrani=`fiyatKazancOrani < fiyatKazancOraniEsik false ${stock}`;\n        }\n    \n      \n        await driver.quit();",
                   "err": {
-                    "message": "ReferenceError: toplam_oazkayank_value is not defined",
-                    "estack": "ReferenceError: toplam_oazkayank_value is not defined\n    at Context.<anonymous> (test\\Prediction.js:26:39)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+                    "message": "ReferenceError: driver is not defined",
+                    "estack": "ReferenceError: driver is not defined\n    at Nakit_ve_Nakit_Benzerleri (test\\financial_statement_values.js:61:9)\n    at Context.<anonymous> (test\\Prediction.js:35:60)",
                     "diff": null
                   },
-                  "uuid": "3cca80fb-ac8a-4d14-9ee5-d505d943cf59",
-                  "parentUUID": null,
-                  "isHook": false,
-                  "skipped": false
-                },
-                {
-                  "title": "fiyatKazancOrani",
-                  "fullTitle": "Petrol TUPRS fiyatKazancOrani",
-                  "timedOut": null,
-                  "duration": 9949,
-                  "state": "passed",
-                  "speed": "slow",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": "\"fiyatKazancOrani < fiyatKazancOraniEsik true TUPRS\"",
-                  "code": "let driver = await new Builder().forBrowser('chrome').build();\n        await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n        let toplam_oazkayank_value=parseInt(await toplam_oazkayank(driver));\n        let Dönem_Net_Kar_Zararı_value=parseInt(await Dönem_Net_Kar_Zararı(driver));\n        let Toplam_Kısa_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Kısa_Vadeli_Yükümlülükler(driver));\n        let Toplam_Uzun_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Uzun_Vadeli_Yükümlülükler(driver));\n        let Nakit_ve_Nakit_Benzerleri_value=parseInt(await Nakit_ve_Nakit_Benzerleri(driver));\n        let ticari_alacaklar_value=parseInt(await ticari_alacaklar(driver));\n        let tüm_borçlar=Toplam_Kısa_Vadeli_Yükümlülükler_value+Toplam_Uzun_Vadeli_Yükümlülükler_value;\n        console.log(\"Toplam_Kısa_Vadeli_Yükümlülükler_value+Toplam_Uzun_Vadeli_Yükümlülükler_value=tümborçlar:\",tüm_borçlar);\n    \n        let fiyatKazancOrani = Nakit_ve_Nakit_Benzerleri_value / Dönem_Net_Kar_Zararı_value;\n        console.log(\" Nakit_ve_Nakit_Benzerleri_value / Dönem_Net_Kar_Zararı_value=fiyat kazanç oranı:\",fiyatKazancOrani);\n    \n        const fiyatKazancOraniEsik = 15;//bu bence çok yüksek bir oran\n        if (fiyatKazancOrani < fiyatKazancOraniEsik) { //düzenlenecek\n          addContext(this, `fiyatKazancOrani < fiyatKazancOraniEsik true ${stock}`);\n        }\n        else{\n          fiyatKazancOrani=`fiyatKazancOrani < fiyatKazancOraniEsik false ${stock}`;\n        }\n    \n      \n        await driver.quit();",
-                  "err": {},
-                  "uuid": "a77b389f-bdaa-4fb7-8438-52923eff2303",
+                  "uuid": "3382a627-ec87-4109-86e0-af54611e87b2",
                   "parentUUID": null,
                   "isHook": false,
                   "skipped": false
@@ -87,20 +69,16 @@
                   "title": "borcOzkaynakOrani",
                   "fullTitle": "Petrol TUPRS borcOzkaynakOrani",
                   "timedOut": null,
-                  "duration": 1171,
-                  "state": "failed",
-                  "speed": null,
-                  "pass": false,
-                  "fail": true,
+                  "duration": 6301,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
                   "pending": false,
                   "context": null,
-                  "code": "let driver = await new Builder().forBrowser('chrome').build();\n          await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n          driver.manage().window().maximize();\n          await toplam_oazkayank_value(driver);\n          await Toplam_Kısa_Vadeli_Yükümlülükler_value(driver);\n          await Toplam_Uzun_Vadeli_Yükümlülükler_value (driver);\n      \n          let toplam_oazkayank_value=parseInt(await toplam_oazkayank(driver));\n          let Toplam_Kısa_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Kısa_Vadeli_Yükümlülükler(driver));\n          let Toplam_Uzun_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Uzun_Vadeli_Yükümlülükler(driver));\n          let Nakit_ve_Nakit_Benzerleri_value=parseInt(await Nakit_ve_Nakit_Benzerleri(driver));\n          let borcOzkaynakOrani = Toplam_Kısa_Vadeli_Yükümlülükler_value + Toplam_Uzun_Vadeli_Yükümlülükler_value / toplam_oazkayank_value;\n      \n          const borcOzkaynakOraniEsik = 0.5;\n      \n          if (borcOzkaynakOrani < borcOzkaynakOraniEsik) {\n            console.log(`borcOzkaynakOrani < borcOzkaynakOraniEsik true ${stock}`);\n          }\n          else{\n            console.log(`borcOzkaynakOrani < borcOzkaynakOraniEsik false ${stock}`);\n          }\n      \n          await driver.quit();",
-                  "err": {
-                    "message": "ReferenceError: Cannot access 'toplam_oazkayank_value' before initialization",
-                    "estack": "ReferenceError: Cannot access 'toplam_oazkayank_value' before initialization\n    at Context.<anonymous> (test\\Prediction.js:76:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
-                    "diff": null
-                  },
-                  "uuid": "98e72aaa-d22e-4e3e-a0c7-afdb0bdebba6",
+                  "code": "let driver = await new Builder().forBrowser('chrome').build();\n          await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n          driver.manage().window().maximize();\n          let toplam_oazkayank_value=parseInt(await toplam_oazkayank(driver,stock));\n          let Toplam_Kısa_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Kısa_Vadeli_Yükümlülükler(driver,stock));\n          let Toplam_Uzun_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Uzun_Vadeli_Yükümlülükler(driver,stock));\n          let borcOzkaynakOrani = Toplam_Kısa_Vadeli_Yükümlülükler_value + Toplam_Uzun_Vadeli_Yükümlülükler_value / toplam_oazkayank_value;\n      \n          const borcOzkaynakOraniEsik = 1;\n      \n          if (borcOzkaynakOrani < borcOzkaynakOraniEsik) {\n            console.log(`borcOzkaynakOrani < borcOzkaynakOraniEsik true ${stock}`);\n          }\n          else{\n            console.log(`borcOzkaynakOrani < borcOzkaynakOraniEsik false ${stock}`);\n          }\n      \n          await driver.quit();",
+                  "err": {},
+                  "uuid": "ddc8966a-df03-4a1b-997d-c7b70c6f6280",
                   "parentUUID": null,
                   "isHook": false,
                   "skipped": false
@@ -109,20 +87,20 @@
                   "title": "likitoran",
                   "fullTitle": "Petrol TUPRS likitoran",
                   "timedOut": null,
-                  "duration": 7823,
+                  "duration": 4438,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
                   "fail": true,
                   "pending": false,
                   "context": null,
-                  "code": "let driver = await new Builder().forBrowser('chrome').build();\n        await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n        driver.manage().window().maximize();\n        let toplam_oazkayank_value=parseInt(await toplam_oazkayank(driver));\n        let Toplam_Kısa_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Kısa_Vadeli_Yükümlülükler(driver));\n        let Toplam_Uzun_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Uzun_Vadeli_Yükümlülükler(driver));\n        let Nakit_ve_Nakit_Benzerleri_value=parseInt(await Nakit_ve_Nakit_Benzerleri(driver));\n        const likitOranEsik = 2;\n        \n        let likitoran=(Nakit_ve_Nakit_Benzerleri_value+ticari_alacaklar_value)/Toplam_Kısa_Vadeli_Yükümlülükler_value;\n        addContext(`Likit oran, bir şirketin kısa vadeli borçlarını ödeme yeteneğini gösteren bir finansal orandır`);\n        \n        if(likitOranEsik < likitoran){\n          console.log(`likitOranEsik < likitoran true ${stock}`);\n        }\n        else{\n          console.log(`likitOranEsik < likitoran false${stock}`);\n        }\n        await driver.quit();",
+                  "code": "let driver = await new Builder().forBrowser('chrome').build();\n        await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n        driver.manage().window().maximize();\n        let Toplam_Kısa_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Kısa_Vadeli_Yükümlülükler(driver,stock));\n        let Nakit_ve_Nakit_Benzerleri_value=parseInt(await Nakit_ve_Nakit_Benzerleri(driver,stock));\n        let ticari_alacaklar_value=parseInt(await ticari_alacaklar(driver,stock));\n        const likitOranEsik = 2;\n      \n        let likitoran=(Nakit_ve_Nakit_Benzerleri_value+ticari_alacaklar_value)/Toplam_Kısa_Vadeli_Yükümlülükler_value;\n        \n        if(likitOranEsik < likitoran){\n          console.log(`likitOranEsik < likitoran true ${stock}`);\n        }\n        else{\n          console.log(`likitOranEsik < likitoran false${stock}`);\n        }\n        addContext(`Likit oran, bir şirketin kısa vadeli borçlarını ödeme yeteneğini gösteren bir finansal orandır`);\n        await driver.quit();",
                   "err": {
-                    "message": "ReferenceError: ticari_alacaklar_value is not defined",
-                    "estack": "ReferenceError: ticari_alacaklar_value is not defined\n    at Context.<anonymous> (test\\Prediction.js:115:56)",
+                    "message": "ReferenceError: driver is not defined",
+                    "estack": "ReferenceError: driver is not defined\n    at Nakit_ve_Nakit_Benzerleri (test\\financial_statement_values.js:61:9)\n    at Context.<anonymous> (test\\Prediction.js:98:60)",
                     "diff": null
                   },
-                  "uuid": "a9f4485c-5f42-4ba7-873a-2fd7241fc5f8",
+                  "uuid": "cc0afa3b-316b-43a2-be2d-70e7a94359ce",
                   "parentUUID": null,
                   "isHook": false,
                   "skipped": false
@@ -130,16 +108,15 @@
               ],
               "suites": [],
               "passes": [
-                "a77b389f-bdaa-4fb7-8438-52923eff2303"
+                "ddc8966a-df03-4a1b-997d-c7b70c6f6280"
               ],
               "failures": [
-                "3cca80fb-ac8a-4d14-9ee5-d505d943cf59",
-                "98e72aaa-d22e-4e3e-a0c7-afdb0bdebba6",
-                "a9f4485c-5f42-4ba7-873a-2fd7241fc5f8"
+                "3382a627-ec87-4109-86e0-af54611e87b2",
+                "cc0afa3b-316b-43a2-be2d-70e7a94359ce"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 21966,
+              "duration": 17444,
               "root": false,
               "rootEmpty": false,
               "_timeout": null
@@ -155,7 +132,7 @@
           "_timeout": null
         },
         {
-          "uuid": "91889f48-3d82-447d-a9dc-45d5c35ba5bb",
+          "uuid": "8571a3e5-96f1-4022-926c-9c553b275106",
           "title": "demir çelik",
           "fullFile": "C:\\Users\\berk\\Desktop\\StockmatketPrediction\\StockMarketPrediction\\test\\Prediction.js",
           "file": "\\test\\Prediction.js",
@@ -164,7 +141,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "b98e0169-edc6-4c55-af80-f80d00e42bb5",
+              "uuid": "2c730eb9-628e-4770-8bfd-118c99fc7609",
               "title": "KCAER",
               "fullFile": "C:\\Users\\berk\\Desktop\\StockmatketPrediction\\StockMarketPrediction\\test\\Prediction.js",
               "file": "\\test\\Prediction.js",
@@ -175,20 +152,20 @@
                   "title": "fiyatKazancOrani",
                   "fullTitle": "demir çelik KCAER fiyatKazancOrani",
                   "timedOut": null,
-                  "duration": 4104,
+                  "duration": 3554,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
                   "fail": true,
                   "pending": false,
                   "context": null,
-                  "code": "let driver = await new Builder().forBrowser('chrome').build();\n      await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n      let toplam_oazkayank_value=parseInt(await toplam_oazkayank(driver));\n      let Dönem_Net_Kar_Zararı_value=parseInt(await Dönem_Net_Kar_Zararı(driver));\n      let Toplam_Kısa_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Kısa_Vadeli_Yükümlülükler(driver));\n      let Toplam_Uzun_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Uzun_Vadeli_Yükümlülükler(driver));\n      let Nakit_ve_Nakit_Benzerleri_value=parseInt(await Nakit_ve_Nakit_Benzerleri(driver));\n      let ticari_alacaklar_value=parseInt(await ticari_alacaklar(driver));\n      let tüm_borçlar=Toplam_Kısa_Vadeli_Yükümlülükler_value+Toplam_Uzun_Vadeli_Yükümlülükler_value;\n      console.log(\"Toplam_Kısa_Vadeli_Yükümlülükler_value+Toplam_Uzun_Vadeli_Yükümlülükler_value=tümborçlar:\",tüm_borçlar);\n  \n      let fiyatKazancOrani = Nakit_ve_Nakit_Benzerleri_value / Dönem_Net_Kar_Zararı_value;\n      console.log(\" Nakit_ve_Nakit_Benzerleri_value / Dönem_Net_Kar_Zararı_value=fiyat kazanç oranı:\",fiyatKazancOrani);\n  \n      const fiyatKazancOraniEsik = 15;//bu bence çok yüksek bir oran\n      if (fiyatKazancOrani < fiyatKazancOraniEsik) { //düzenlenecek\n        addContext(this, `fiyatKazancOrani < fiyatKazancOraniEsik true ${stock}`);\n      }\n      else{\n        fiyatKazancOrani=`fiyatKazancOrani < fiyatKazancOraniEsik false ${stock}`;\n      }\n  \n    \n      await driver.quit();",
+                  "code": "let driver = await new Builder().forBrowser('chrome').build();\n        await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n        let Dönem_Net_Kar_Zararı_value=parseInt(await Dönem_Net_Kar_Zararı(driver));\n        let Toplam_Kısa_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Kısa_Vadeli_Yükümlülükler(driver));\n        let Toplam_Uzun_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Uzun_Vadeli_Yükümlülükler(driver));\n        let Nakit_ve_Nakit_Benzerleri_value=parseInt(await Nakit_ve_Nakit_Benzerleri(driver));\n        let tüm_borçlar=Toplam_Kısa_Vadeli_Yükümlülükler_value+Toplam_Uzun_Vadeli_Yükümlülükler_value;\n        console.log(\"Toplam_Kısa_Vadeli_Yükümlülükler_value+Toplam_Uzun_Vadeli_Yükümlülükler_value=tümborçlar:\",tüm_borçlar);\n    \n        let fiyatKazancOrani = Nakit_ve_Nakit_Benzerleri_value / Dönem_Net_Kar_Zararı_value;\n        console.log(\" Nakit_ve_Nakit_Benzerleri_value / Dönem_Net_Kar_Zararı_value=fiyat kazanç oranı:\",fiyatKazancOrani);\n    \n        const fiyatKazancOraniEsik = 15;//bu bence çok yüksek bir oran\n        if (fiyatKazancOrani < fiyatKazancOraniEsik) { //düzenlenecek\n          addContext(this, `fiyatKazancOrani < fiyatKazancOraniEsik true ${stock}`);\n        }\n        else{\n          fiyatKazancOrani=`fiyatKazancOrani < fiyatKazancOraniEsik false ${stock}`;\n        }\n    \n      \n        await driver.quit();",
                   "err": {
-                    "message": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"TUPRS\"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[5]/tr[12]/td[2]/div/span[2]\"}\n  (Session info: chrome=122.0.6261.69)",
-                    "estack": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"TUPRS\"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[5]/tr[12]/td[2]/div/span[2]\"}\n  (Session info: chrome=122.0.6261.69)\n    at Object.throwDecodedError (node_modules\\selenium-webdriver\\lib\\error.js:524:15)\n    at parseHttpResponse (node_modules\\selenium-webdriver\\lib\\http.js:601:13)\n    at Executor.execute (node_modules\\selenium-webdriver\\lib\\http.js:529:28)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Driver.execute (node_modules\\selenium-webdriver\\lib\\webdriver.js:745:17)\n    at async toplam_oazkayank (test\\financial_statement_values.js:10:31)\n    at async Context.<anonymous> (test\\Prediction.js:147:43)",
+                    "message": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"undefined\"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[5]/tr[10]/td[2]/div/span[2]\"}\n  (Session info: chrome=122.0.6261.69)",
+                    "estack": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"undefined\"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[5]/tr[10]/td[2]/div/span[2]\"}\n  (Session info: chrome=122.0.6261.69)\n    at Object.throwDecodedError (node_modules\\selenium-webdriver\\lib\\error.js:524:15)\n    at parseHttpResponse (node_modules\\selenium-webdriver\\lib\\http.js:601:13)\n    at Executor.execute (node_modules\\selenium-webdriver\\lib\\http.js:529:28)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Driver.execute (node_modules\\selenium-webdriver\\lib\\webdriver.js:745:17)\n    at async Dönem_Net_Kar_Zararı (test\\financial_statement_values.js:26:36)\n    at async Context.<anonymous> (test\\Prediction.js:132:49)",
                     "diff": null
                   },
-                  "uuid": "994d7149-2d9f-4766-97ad-89711c7b7576",
+                  "uuid": "05eefc5f-ef29-4d1c-b007-07fb5df84517",
                   "parentUUID": null,
                   "isHook": false,
                   "skipped": false
@@ -197,20 +174,20 @@
                   "title": "borcOzkaynakOrani",
                   "fullTitle": "demir çelik KCAER borcOzkaynakOrani",
                   "timedOut": null,
-                  "duration": 2926,
+                  "duration": 4228,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
                   "fail": true,
                   "pending": false,
                   "context": null,
-                  "code": "let driver = await new Builder().forBrowser('chrome').build();\n        await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n        driver.manage().window().maximize();\n        await toplam_oazkayank_value(driver);\n        await Toplam_Kısa_Vadeli_Yükümlülükler_value(driver);\n        await Toplam_Uzun_Vadeli_Yükümlülükler_value (driver);\n    \n        let toplam_oazkayank_value=parseInt(await toplam_oazkayank(driver));\n        let Toplam_Kısa_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Kısa_Vadeli_Yükümlülükler(driver));\n        let Toplam_Uzun_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Uzun_Vadeli_Yükümlülükler(driver));\n        let Nakit_ve_Nakit_Benzerleri_value=parseInt(await Nakit_ve_Nakit_Benzerleri(driver));\n        let borcOzkaynakOrani = Toplam_Kısa_Vadeli_Yükümlülükler_value + Toplam_Uzun_Vadeli_Yükümlülükler_value / toplam_oazkayank_value;\n    \n        const borcOzkaynakOraniEsik = 0.5;\n    \n        if (borcOzkaynakOrani < borcOzkaynakOraniEsik) {\n          console.log(`borcOzkaynakOrani < borcOzkaynakOraniEsik true ${stock}`);\n        }\n        else{\n          console.log(`borcOzkaynakOrani < borcOzkaynakOraniEsik false ${stock}`);\n        }\n    \n        await driver.quit();",
+                  "code": "let driver = await new Builder().forBrowser('chrome').build();\n          await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n          driver.manage().window().maximize();\n          let toplam_oazkayank_value=parseInt(await toplam_oazkayank(driver));\n          let Toplam_Kısa_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Kısa_Vadeli_Yükümlülükler(driver));\n          let Toplam_Uzun_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Uzun_Vadeli_Yükümlülükler(driver));\n          let borcOzkaynakOrani = Toplam_Kısa_Vadeli_Yükümlülükler_value + Toplam_Uzun_Vadeli_Yükümlülükler_value / toplam_oazkayank_value;\n      \n          const borcOzkaynakOraniEsik = 1;\n      \n          if (borcOzkaynakOrani < borcOzkaynakOraniEsik) {\n            console.log(`borcOzkaynakOrani < borcOzkaynakOraniEsik true ${stock}`);\n          }\n          else{\n            console.log(`borcOzkaynakOrani < borcOzkaynakOraniEsik false ${stock}`);\n          }\n      \n          await driver.quit();",
                   "err": {
-                    "message": "ReferenceError: Cannot access 'toplam_oazkayank_value' before initialization",
-                    "estack": "ReferenceError: Cannot access 'toplam_oazkayank_value' before initialization\n    at Context.<anonymous> (test\\Prediction.js:185:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+                    "message": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"undefined\"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[5]/tr[12]/td[2]/div/span[2]\"}\n  (Session info: chrome=122.0.6261.69)",
+                    "estack": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"undefined\"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[5]/tr[12]/td[2]/div/span[2]\"}\n  (Session info: chrome=122.0.6261.69)\n    at Object.throwDecodedError (node_modules\\selenium-webdriver\\lib\\error.js:524:15)\n    at parseHttpResponse (node_modules\\selenium-webdriver\\lib\\http.js:601:13)\n    at Executor.execute (node_modules\\selenium-webdriver\\lib\\http.js:529:28)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Driver.execute (node_modules\\selenium-webdriver\\lib\\webdriver.js:745:17)\n    at async toplam_oazkayank (test\\financial_statement_values.js:10:31)\n    at async Context.<anonymous> (test\\Prediction.js:168:47)",
                     "diff": null
                   },
-                  "uuid": "79049a8e-11fd-4c7f-8d7b-4bf21de8b066",
+                  "uuid": "3df20c5e-1faa-47ef-bdc1-8724cd0a4479",
                   "parentUUID": null,
                   "isHook": false,
                   "skipped": false
@@ -219,20 +196,20 @@
                   "title": "likitoran",
                   "fullTitle": "demir çelik KCAER likitoran",
                   "timedOut": null,
-                  "duration": 4165,
+                  "duration": 3880,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
                   "fail": true,
                   "pending": false,
                   "context": null,
-                  "code": "let driver = await new Builder().forBrowser('chrome').build();\n      await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n      driver.manage().window().maximize();\n      let toplam_oazkayank_value=parseInt(await toplam_oazkayank(driver));\n      let Toplam_Kısa_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Kısa_Vadeli_Yükümlülükler(driver));\n      let Toplam_Uzun_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Uzun_Vadeli_Yükümlülükler(driver));\n      let Nakit_ve_Nakit_Benzerleri_value=parseInt(await Nakit_ve_Nakit_Benzerleri(driver));\n      const likitOranEsik = 2;\n      \n      let likitoran=(Nakit_ve_Nakit_Benzerleri_value+ticari_alacaklar_value)/Toplam_Kısa_Vadeli_Yükümlülükler_value;\n      addContext(`Likit oran, bir şirketin kısa vadeli borçlarını ödeme yeteneğini gösteren bir finansal orandır`);\n      \n      if(likitOranEsik < likitoran){\n        console.log(`likitOranEsik < likitoran true ${stock}`);\n      }\n      else{\n        console.log(`likitOranEsik < likitoran false${stock}`);\n      }\n      await driver.quit();",
+                  "code": "let driver = await new Builder().forBrowser('chrome').build();\n        await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); \n        driver.manage().window().maximize();\n        let Toplam_Kısa_Vadeli_Yükümlülükler_value=parseInt(await Toplam_Kısa_Vadeli_Yükümlülükler(driver));\n        let Nakit_ve_Nakit_Benzerleri_value=parseInt(await Nakit_ve_Nakit_Benzerleri(driver));\n        let ticari_alacaklar_value=parseInt(await ticari_alacaklar(driver));\n        const likitOranEsik = 2;\n      \n        let likitoran=(Nakit_ve_Nakit_Benzerleri_value+ticari_alacaklar_value)/Toplam_Kısa_Vadeli_Yükümlülükler_value;\n        \n        if(likitOranEsik < likitoran){\n          console.log(`likitOranEsik < likitoran true ${stock}`);\n        }\n        else{\n          console.log(`likitOranEsik < likitoran false${stock}`);\n        }\n        addContext(`Likit oran, bir şirketin kısa vadeli borçlarını ödeme yeteneğini gösteren bir finansal orandır`);\n        await driver.quit();",
                   "err": {
-                    "message": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"TUPRS\"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[5]/tr[12]/td[2]/div/span[2]\"}\n  (Session info: chrome=122.0.6261.69)",
-                    "estack": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"TUPRS\"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[5]/tr[12]/td[2]/div/span[2]\"}\n  (Session info: chrome=122.0.6261.69)\n    at Object.throwDecodedError (node_modules\\selenium-webdriver\\lib\\error.js:524:15)\n    at parseHttpResponse (node_modules\\selenium-webdriver\\lib\\http.js:601:13)\n    at Executor.execute (node_modules\\selenium-webdriver\\lib\\http.js:529:28)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Driver.execute (node_modules\\selenium-webdriver\\lib\\webdriver.js:745:17)\n    at async toplam_oazkayank (test\\financial_statement_values.js:10:31)\n    at async Context.<anonymous> (test\\Prediction.js:217:43)",
+                    "message": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"undefined\"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[3]/tr[11]/td[2]/div/span[2]\"}\n  (Session info: chrome=122.0.6261.69)",
+                    "estack": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[@id=\"undefined\"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[3]/tr[11]/td[2]/div/span[2]\"}\n  (Session info: chrome=122.0.6261.69)\n    at Object.throwDecodedError (node_modules\\selenium-webdriver\\lib\\error.js:524:15)\n    at parseHttpResponse (node_modules\\selenium-webdriver\\lib\\http.js:601:13)\n    at Executor.execute (node_modules\\selenium-webdriver\\lib\\http.js:529:28)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Driver.execute (node_modules\\selenium-webdriver\\lib\\webdriver.js:745:17)\n    at async Toplam_Kısa_Vadeli_Yükümlülükler (test\\financial_statement_values.js:39:48)\n    at async Context.<anonymous> (test\\Prediction.js:196:61)",
                     "diff": null
                   },
-                  "uuid": "dab35bf3-4945-456b-8e03-1e1168164e93",
+                  "uuid": "70808c2c-764b-4fa5-8f9d-0154f8a69790",
                   "parentUUID": null,
                   "isHook": false,
                   "skipped": false
@@ -241,13 +218,13 @@
               "suites": [],
               "passes": [],
               "failures": [
-                "994d7149-2d9f-4766-97ad-89711c7b7576",
-                "79049a8e-11fd-4c7f-8d7b-4bf21de8b066",
-                "dab35bf3-4945-456b-8e03-1e1168164e93"
+                "05eefc5f-ef29-4d1c-b007-07fb5df84517",
+                "3df20c5e-1faa-47ef-bdc1-8724cd0a4479",
+                "70808c2c-764b-4fa5-8f9d-0154f8a69790"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 11195,
+              "duration": 11662,
               "root": false,
               "rootEmpty": false,
               "_timeout": null
