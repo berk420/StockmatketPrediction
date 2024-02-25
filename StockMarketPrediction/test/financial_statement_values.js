@@ -8,7 +8,6 @@ module.exports = {
         await new Promise(resolve => setTimeout(resolve, 1000));
     
         const toplam_ozkaynak=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[5]/tr[12]/td[2]/div/span[2]`));
-        
         toplam_ozkaynak.getText().then(result => {
             toplam_oazkayank_value=result;
         })
@@ -57,7 +56,7 @@ module.exports = {
         return Toplam_Uzun_Vadeli_Yükümlülükler_value;
     },
 
-    Nakit_ve_Nakit_Benzerleri:async function(driveristock) {
+    Nakit_ve_Nakit_Benzerleri:async function(driver,stock) {
         driver.manage().window().maximize();
 
         let Nakit_ve_Nakit_Benzerleri_value;
