@@ -8,7 +8,8 @@ const {
   Toplam_Kısa_Vadeli_Yükümlülükler,
   Toplam_Uzun_Vadeli_Yükümlülükler,
   Nakit_ve_Nakit_Benzerleri,
-  ticari_alacaklar} 
+  ticari_alacaklar,
+  NakitveNakitBenzerleri_all} 
   = require("./financial_statement_values.js");
 
 const stocks_petrol = ["TUPRS"];
@@ -17,6 +18,19 @@ const stocks_demirçelik = ["KCAER"];
 describe("Petrol", async function () {
     stocks_petrol.forEach(stock =>{
       describe(stock,async function() {
+
+        it("dönen varlık", async function(){
+          let driver = await new Builder().forBrowser('chrome').build();
+
+          await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); 
+
+          let NakitveNakitBenzerleri_allss=await NakitveNakitBenzerleri_all(driver,stock);
+
+          //***
+          <h>berkkkkkkk</h>
+
+            
+        })
 
         it("fiyatKazancOrani", async function(){
           let driver = await new Builder().forBrowser('chrome').build();

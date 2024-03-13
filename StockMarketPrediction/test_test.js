@@ -11,25 +11,36 @@ const {
   Toplam_Uzun_Vadeli_Yükümlülükler,
   Nakit_ve_Nakit_Benzerleri,
   ticari_alacaklar,
-  toplam_oazkayank_all} 
+  toplam_oazkayank_all,
+
+  NakitveNakitBenzerleri_all} 
   = require("./test/financial_statement_values.js");
 
 
-async function combobox_verileri(){
+async function testing(){
 
   let driver = await new Builder().forBrowser('chrome').build();
-
   stock="TUPRS"
-
-  await driver.get(`https://fintables.com/sirketler/TUPRS/finansal-tablolar/bilanco`); 
-
-  let Dönem_Net_Kar_Zararı_value=parseInt(await toplam_oazkayank_all(driver,stock));
+  await driver.get(`https://fintables.com/sirketler/TUPRS/finansal-tablolar/bilanco`);
 
 
 
-  console.log(Dönem_Net_Kar_Zararı_value);
+  let NakitveNakitBenzerleri_allss=await NakitveNakitBenzerleri_all(driver,stock);
+
+  console.log(NakitveNakitBenzerleri_allss);
+  for (let eleman of NakitveNakitBenzerleri_allss) {
+    console.log(eleman);
+  }
+
+  NakitveNakitBenzerleri_allss.forEach((satir) => {
+    let satirYazisi = "";
+    satir.forEach((eleman) => {
+      satirYazisi += eleman + " ";
+    });
+    console.log(satirYazisi);
+  });
 
 
 }
 
-combobox_verileri();
+testing();

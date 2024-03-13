@@ -1,7 +1,468 @@
 //module.exportsconst { Base_URL, Second_URL, SuperAdmin_email, SuperAdmin_password, TenantAdmin_email, TenantAdmin_password, User_email, User_password} = require("./variables.js");
 const {By, Builder,sendKeys,Key, WebElement,until } = require("selenium-webdriver");
 
+async function pass_click(driver,stock) {
+  let zaman_butonu=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/button`));
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  await zaman_butonu.click();
+  console.log("object");
+}
 module.exports = {
+
+ NakitveNakitBenzerleri_all:async function(driver,stock) {
+    await driver.manage().window().maximize();
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    await driver.navigate().refresh();
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+
+    //#region zaman verilerini aldık 
+
+    let NakitveNakitBenzerleri_all_sontarih_value_1_2;
+    const NakitveNakitBenzerleri_all_sontarihh_1_2=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[2]/div/div`));
+    NakitveNakitBenzerleri_all_sontarihh_1_2.getText().then(result => {               
+      NakitveNakitBenzerleri_all_sontarih_value_1_2=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_all_sontarih_value_1_3;
+    const NakitveNakitBenzerleri_all_sontarihh_1_3=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div`));
+    NakitveNakitBenzerleri_all_sontarihh_1_3.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+      NakitveNakitBenzerleri_all_sontarih_value_1_3=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+
+    let NakitveNakitBenzerleri_all_sontarih_value_1_4;
+    const NakitveNakitBenzerleri_all_sontarihh_1_4=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[4]/div/div`));
+    NakitveNakitBenzerleri_all_sontarihh_1_4.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+      NakitveNakitBenzerleri_all_sontarih_value_1_4=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_all_sontarih_value_1_5;
+    const NakitveNakitBenzerleri_all_sontarihh_1_5=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[5]/div/div`));
+    NakitveNakitBenzerleri_all_sontarihh_1_5.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+      NakitveNakitBenzerleri_all_sontarih_value_1_5=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_all_sontarih_value_1_6;
+    const NakitveNakitBenzerleri_all_sontarihh_1_6=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/div`));
+    NakitveNakitBenzerleri_all_sontarihh_1_6.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+      NakitveNakitBenzerleri_all_sontarih_value_1_6=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    await pass_click(driver,stock);
+    await pass_click(driver,stock);
+    await pass_click(driver,stock);
+    await pass_click(driver,stock);
+    await pass_click(driver,stock);
+
+    let NakitveNakitBenzerleri_all_sontarih_value_2_2;
+    const NakitveNakitBenzerleri_all_sontarihh_2_2=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[2]/div/div`));
+    NakitveNakitBenzerleri_all_sontarihh_2_2.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+      NakitveNakitBenzerleri_all_sontarih_value_2_2=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    let NakitveNakitBenzerleri_all_sontarih_value_2_3;
+    const NakitveNakitBenzerleri_all_sontarihh_2_3=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div`));
+    NakitveNakitBenzerleri_all_sontarihh_2_3.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+      NakitveNakitBenzerleri_all_sontarih_value_2_3=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_all_sontarih_value_2_4;
+    const NakitveNakitBenzerleri_all_sontarihh_2_4=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[4]/div/div`));
+    NakitveNakitBenzerleri_all_sontarihh_2_4.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+      NakitveNakitBenzerleri_all_sontarih_value_2_4=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_all_sontarih_value_2_5;
+    const NakitveNakitBenzerleri_all_sontarihh_2_5=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[5]/div/div`));
+    NakitveNakitBenzerleri_all_sontarihh_2_5.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+      NakitveNakitBenzerleri_all_sontarih_value_2_5=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_all_sontarih_value_2_6;
+    const NakitveNakitBenzerleri_all_sontarihh_2_6=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/div`));
+    NakitveNakitBenzerleri_all_sontarihh_2_6.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+      NakitveNakitBenzerleri_all_sontarih_value_2_6=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+
+    await pass_click(driver,stock);
+    await pass_click(driver,stock);
+    await pass_click(driver,stock);
+    await pass_click(driver,stock);
+    await pass_click(driver,stock);
+
+
+    let NakitveNakitBenzerleri_all_sontarih_value_3_2;
+    const NakitveNakitBenzerleri_all_sontarihh_3_2=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[2]/div/div`));
+    NakitveNakitBenzerleri_all_sontarihh_3_2.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+      NakitveNakitBenzerleri_all_sontarih_value_3_2=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_all_sontarih_value_3_3;
+    const NakitveNakitBenzerleri_all_sontarihh_3_3=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div`));
+    NakitveNakitBenzerleri_all_sontarihh_3_3.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+      NakitveNakitBenzerleri_all_sontarih_value_3_3=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_all_sontarih_value_3_4;
+    const NakitveNakitBenzerleri_all_sontarihh_3_4=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[4]/div/div`));
+    NakitveNakitBenzerleri_all_sontarihh_3_4.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+      NakitveNakitBenzerleri_all_sontarih_value_3_4=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_all_sontarih_value_3_5;
+    const NakitveNakitBenzerleri_all_sontarihh_3_5=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[5]/div/div`));
+    NakitveNakitBenzerleri_all_sontarihh_3_5.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+      NakitveNakitBenzerleri_all_sontarih_value_3_5=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_all_sontarih_value_3_6;
+    const NakitveNakitBenzerleri_all_sontarihh_3_6=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/div`));
+    NakitveNakitBenzerleri_all_sontarihh_3_6.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+      NakitveNakitBenzerleri_all_sontarih_value_3_6=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    //#endregion
+
+    await driver.navigate().refresh();
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+
+    let NakitveNakitBenzerleri_value_1_2;
+    const NakitveNakitBenzerleri_value_html_1_2=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[1]/tr[2]/td[2]/div/span[2]`));
+    NakitveNakitBenzerleri_value_html_1_2.getText().then(result => { 
+      NakitveNakitBenzerleri_value_1_2=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_value_1_3;
+    const NakitveNakitBenzerleri_value_html_1_3=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[1]/tr[2]/td[3]/div/span[2]`));
+    NakitveNakitBenzerleri_value_html_1_3.getText().then(result => { 
+      NakitveNakitBenzerleri_value_1_3=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_value_1_4;
+    const NakitveNakitBenzerleri_value_html_1_4=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[1]/tr[2]/td[4]/div/span[2]`));
+    NakitveNakitBenzerleri_value_html_1_4.getText().then(result => { 
+      NakitveNakitBenzerleri_value_1_4=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_value_1_5;
+    const NakitveNakitBenzerleri_value_html_1_5=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[1]/tr[2]/td[5]/div/span[2]`));
+    NakitveNakitBenzerleri_value_html_1_5.getText().then(result => { 
+      NakitveNakitBenzerleri_value_1_5=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_value_1_6;
+    const NakitveNakitBenzerleri_value_html_1_6=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[1]/tr[6]/td[6]/div/span[2]`));
+    NakitveNakitBenzerleri_value_html_1_6.getText().then(result => { 
+      NakitveNakitBenzerleri_value_1_6=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    await pass_click(driver,stock);
+    await pass_click(driver,stock);
+    await pass_click(driver,stock);
+    await pass_click(driver,stock);
+    await pass_click(driver,stock);
+
+    let NakitveNakitBenzerleri_value_2_2;
+    const NakitveNakitBenzerleri_value_html_2_2=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[1]/tr[2]/td[2]/div/span[2]`));
+    NakitveNakitBenzerleri_value_html_2_2.getText().then(result => { 
+      NakitveNakitBenzerleri_value_2_2=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_value_2_3;
+    const NakitveNakitBenzerleri_value_html_2_3=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[1]/tr[2]/td[3]/div/span[2]`));
+    NakitveNakitBenzerleri_value_html_2_3.getText().then(result => { 
+      NakitveNakitBenzerleri_value_2_3=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_value_2_4;
+    const NakitveNakitBenzerleri_value_html_2_4=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[1]/tr[2]/td[4]/div/span[2]`));
+    NakitveNakitBenzerleri_value_html_2_4.getText().then(result => { 
+      NakitveNakitBenzerleri_value_2_4=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_value_2_5;
+    const NakitveNakitBenzerleri_value_html_2_5=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[1]/tr[2]/td[5]/div/span[2]`));
+    NakitveNakitBenzerleri_value_html_2_5.getText().then(result => { 
+      NakitveNakitBenzerleri_value_2_5=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_value_2_6;
+    const NakitveNakitBenzerleri_value_html_2_6=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[1]/tr[6]/td[6]/div/span[2]`));
+    NakitveNakitBenzerleri_value_html_2_6.getText().then(result => { 
+      NakitveNakitBenzerleri_value_2_6=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    await pass_click(driver,stock);
+    await pass_click(driver,stock);
+    await pass_click(driver,stock);
+    await pass_click(driver,stock);
+    await pass_click(driver,stock);
+
+    let NakitveNakitBenzerleri_value_3_2;
+    const NakitveNakitBenzerleri_value_html_3_2=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[1]/tr[2]/td[2]/div/span[2]`));
+    NakitveNakitBenzerleri_value_html_3_2.getText().then(result => { 
+      NakitveNakitBenzerleri_value_3_2=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_value_3_3;
+    const NakitveNakitBenzerleri_value_html_3_3=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[1]/tr[2]/td[3]/div/span[2]`));
+    NakitveNakitBenzerleri_value_html_3_3.getText().then(result => { 
+      NakitveNakitBenzerleri_value_3_3=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_value_3_4;
+    const NakitveNakitBenzerleri_value_html_3_4=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[1]/tr[2]/td[4]/div/span[2]`));
+    NakitveNakitBenzerleri_value_html_3_4.getText().then(result => { 
+      NakitveNakitBenzerleri_value_3_4=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_value_3_5;
+    const NakitveNakitBenzerleri_value_html_3_5=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[1]/tr[2]/td[5]/div/span[2]`));
+    NakitveNakitBenzerleri_value_html_3_5.getText().then(result => { 
+      NakitveNakitBenzerleri_value_3_5=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    let NakitveNakitBenzerleri_value_3_6;
+    const NakitveNakitBenzerleri_value_html_3_6=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[2]/tbody[1]/tr[6]/td[6]/div/span[2]`));
+    NakitveNakitBenzerleri_value_html_3_6.getText().then(result => { 
+      NakitveNakitBenzerleri_value_3_6=result;
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+
+    let arr_time=[
+      [NakitveNakitBenzerleri_all_sontarih_value_1_2,NakitveNakitBenzerleri_value_1_2],
+      [NakitveNakitBenzerleri_all_sontarih_value_1_3,NakitveNakitBenzerleri_value_1_3],
+      [NakitveNakitBenzerleri_all_sontarih_value_1_4,NakitveNakitBenzerleri_value_1_4],
+      [NakitveNakitBenzerleri_all_sontarih_value_1_5,NakitveNakitBenzerleri_value_1_5],
+      [NakitveNakitBenzerleri_all_sontarih_value_1_6,NakitveNakitBenzerleri_value_1_6],
+      [NakitveNakitBenzerleri_all_sontarih_value_2_2,NakitveNakitBenzerleri_value_2_2],
+      [NakitveNakitBenzerleri_all_sontarih_value_2_3,NakitveNakitBenzerleri_value_2_3],
+      [NakitveNakitBenzerleri_all_sontarih_value_2_4,NakitveNakitBenzerleri_value_2_4],
+      [NakitveNakitBenzerleri_all_sontarih_value_2_5,NakitveNakitBenzerleri_value_2_5],
+      [NakitveNakitBenzerleri_all_sontarih_value_2_6,NakitveNakitBenzerleri_value_2_6],
+      [NakitveNakitBenzerleri_all_sontarih_value_3_2,NakitveNakitBenzerleri_value_3_2],
+      [NakitveNakitBenzerleri_all_sontarih_value_3_3,NakitveNakitBenzerleri_value_3_3],
+      [NakitveNakitBenzerleri_all_sontarih_value_3_4,NakitveNakitBenzerleri_value_3_4],
+      [NakitveNakitBenzerleri_all_sontarih_value_3_5,NakitveNakitBenzerleri_value_3_5],
+      [NakitveNakitBenzerleri_all_sontarih_value_3_6,NakitveNakitBenzerleri_value_3_6],
+      ];
+
+
+    return arr_time;
+},
+
+
+toplam_oazkayank_all:async function(driver,stock) {
+  await driver.manage().window().maximize();
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  await driver.navigate().refresh();
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+
+  let toplam_oazkayank_all_sontarih_value_1_2;
+  const toplam_ozkaynak_all_sontarihh_1_2=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[2]/div/div`));
+  toplam_ozkaynak_all_sontarihh_1_2.getText().then(result => {               
+    toplam_oazkayank_all_sontarih_value_1_2=result;
+  })
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+
+  let toplam_oazkayank_all_sontarih_value_1_3;
+  const toplam_ozkaynak_all_sontarihh_1_3=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div`));
+  toplam_ozkaynak_all_sontarihh_1_3.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+    toplam_oazkayank_all_sontarih_value_1_3=result;
+  })
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+
+  let toplam_oazkayank_all_sontarih_value_1_4;
+  const toplam_ozkaynak_all_sontarihh_1_4=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[4]/div/div`));
+  toplam_ozkaynak_all_sontarihh_1_4.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+    toplam_oazkayank_all_sontarih_value_1_4=result;
+  })
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  let toplam_oazkayank_all_sontarih_value_1_5;
+  const toplam_ozkaynak_all_sontarihh_1_5=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[5]/div/div`));
+  toplam_ozkaynak_all_sontarihh_1_5.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+    toplam_oazkayank_all_sontarih_value_1_5=result;
+  })
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  let toplam_oazkayank_all_sontarih_value_1_6;
+  const toplam_ozkaynak_all_sontarihh_1_6=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/div`));
+  toplam_ozkaynak_all_sontarihh_1_6.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+    toplam_oazkayank_all_sontarih_value_1_6=result;
+  })
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  let zaman_butonu_1=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/button`));
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  await zaman_butonu_1.click();
+  let zaman_butonu_2=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/button`));
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  await zaman_butonu_2.click();
+  let zaman_butonu_3=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/button`));
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  await zaman_butonu_3.click();
+  let zaman_butonu_4=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/button`));
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  await zaman_butonu_4.click();
+  let zaman_butonu_5=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/button`));
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  await zaman_butonu_5.click();
+
+
+
+  //yana geçme butonuna 5 defa click et 
+
+
+  let toplam_oazkayank_all_sontarih_value_2_2;
+  const toplam_ozkaynak_all_sontarihh_2_2=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[2]/div/div`));
+  toplam_ozkaynak_all_sontarihh_2_2.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+    toplam_oazkayank_all_sontarih_value_2_2=result;
+  })
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  
+  let toplam_oazkayank_all_sontarih_value_2_3;
+  const toplam_ozkaynak_all_sontarihh_2_3=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div`));
+  toplam_ozkaynak_all_sontarihh_2_3.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+    toplam_oazkayank_all_sontarih_value_2_3=result;
+  })
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  let toplam_oazkayank_all_sontarih_value_2_4;
+  const toplam_ozkaynak_all_sontarihh_2_4=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[4]/div/div`));
+  toplam_ozkaynak_all_sontarihh_2_4.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+    toplam_oazkayank_all_sontarih_value_2_4=result;
+  })
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  let toplam_oazkayank_all_sontarih_value_2_5;
+  const toplam_ozkaynak_all_sontarihh_2_5=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[5]/div/div`));
+  toplam_ozkaynak_all_sontarihh_2_5.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+    toplam_oazkayank_all_sontarih_value_2_5=result;
+  })
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  let toplam_oazkayank_all_sontarih_value_2_6;
+  const toplam_ozkaynak_all_sontarihh_2_6=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/div`));
+  toplam_ozkaynak_all_sontarihh_2_6.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+    toplam_oazkayank_all_sontarih_value_2_6=result;
+  })
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+
+  let zaman_butonu_6=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/button`));
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  await zaman_butonu_6.click();
+  let zaman_butonu_7=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/button`));
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  await zaman_butonu_7.click();
+  let zaman_butonu_8=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/button`));
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  await zaman_butonu_8.click();
+  let zaman_butonu_9=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/button`));
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  await zaman_butonu_9.click();
+  let zaman_butonu_10=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/button`));
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  await zaman_butonu_10.click();
+
+  let toplam_oazkayank_all_sontarih_value_3_2;
+  const toplam_ozkaynak_all_sontarihh_3_2=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[2]/div/div`));
+  toplam_ozkaynak_all_sontarihh_3_2.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+    toplam_oazkayank_all_sontarih_value_3_2=result;
+  })
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  let toplam_oazkayank_all_sontarih_value_3_3;
+  const toplam_ozkaynak_all_sontarihh_3_3=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div`));
+  toplam_ozkaynak_all_sontarihh_3_3.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+    toplam_oazkayank_all_sontarih_value_3_3=result;
+  })
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  let toplam_oazkayank_all_sontarih_value_3_4;
+  const toplam_ozkaynak_all_sontarihh_3_4=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[4]/div/div`));
+  toplam_ozkaynak_all_sontarihh_3_4.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+    toplam_oazkayank_all_sontarih_value_3_4=result;
+  })
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  let toplam_oazkayank_all_sontarih_value_3_5;
+  const toplam_ozkaynak_all_sontarihh_3_5=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[5]/div/div`));
+  toplam_ozkaynak_all_sontarihh_3_5.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+    toplam_oazkayank_all_sontarih_value_3_5=result;
+  })
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  let toplam_oazkayank_all_sontarih_value_3_6;
+  const toplam_ozkaynak_all_sontarihh_3_6=await driver.findElement(By.xpath(`//*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[6]/div/div`));
+  toplam_ozkaynak_all_sontarihh_3_6.getText().then(result => {               //*[@id="${stock}"]/div[5]/div[1]/div/main/div/div/div[3]/div[4]/table[1]/thead/tr/th[3]/div/div
+    toplam_oazkayank_all_sontarih_value_3_6=result;
+  })
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+
+
+  let arr_time=[
+    toplam_oazkayank_all_sontarih_value_1_2,
+    toplam_oazkayank_all_sontarih_value_1_3,
+    toplam_oazkayank_all_sontarih_value_1_4,
+    toplam_oazkayank_all_sontarih_value_1_5,
+    toplam_oazkayank_all_sontarih_value_1_6,
+    toplam_oazkayank_all_sontarih_value_2_2,
+    toplam_oazkayank_all_sontarih_value_2_3,
+    toplam_oazkayank_all_sontarih_value_2_4,
+    toplam_oazkayank_all_sontarih_value_2_5,
+    toplam_oazkayank_all_sontarih_value_2_6,
+    toplam_oazkayank_all_sontarih_value_3_2,
+    toplam_oazkayank_all_sontarih_value_3_3,
+    toplam_oazkayank_all_sontarih_value_3_4,
+    toplam_oazkayank_all_sontarih_value_3_5,
+    toplam_oazkayank_all_sontarih_value_3_6,
+    ];
+
+
+  return arr_time;
+},
+
+
+
+  
 
   toplam_oazkayank_all:async function(driver,stock) {
     await driver.manage().window().maximize();
