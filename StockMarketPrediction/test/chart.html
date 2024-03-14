@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
+    <script src="./stock_analyz.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TUPRS & KCAER Gösterge Panosu</title>
+  <style>
+    /* Yukarıdaki CSS kodlarını buraya yapıştırın */
+    /* Genel stiller */
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 5px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* Kutu stiller */
+
+    .kutu {
+      display: inline-block;
+      width: 300px;
+      margin-right: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+
+    /* Renkler */
+
+    .kutu h2 {
+      color: #333;
+    }
+
+    .kutu ul li {
+      background-color: #f7f7f7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>TUPRS & KCAER Gösterge Panosu</h1>
+    </header>
+    <main>
+      <div class="kutu">
+        <h2>TUPRS Verileri</h2>
+        <canvas id="tuprsChart"></canvas>
+        <ul>
+          <li>Veri 1</li>
+          <li>Veri 2</li>
+          <li>Veri 3</li>
+        </ul>
+      </div>
+      <div class="kutu">
+        <h2>KCAER Verileri</h2>
+        <canvas id="kcaerChart"></canvas>
+        <ul>
+          <li>Veri 4</li>
+          <li>Veri 5</li>
+          <li>Veri 6</li>
+        </ul>
+      </div>
+
+      <div id="moduleResult"></div> <!-- Modülün döndürdüğü değeri göstereceğimiz alan -->
+
+    </main>
+  </div>
+
+
+  <script>
+
+import {test} from "./stock_analyz.js";
+//const{nakitakisi_graph} = require("./stock_analyz.js");
+
+
+async function displayModuleResult() {
+  debugger;
+
+  test();
+
+
+
+
+    var ctx = document.getElementById('tuprsChart').getContext('2d');
+    var tuprsChart = new Chart(ctx, {
+      // Chart configuration for TUPRS data
+      type: 'line',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: 'Example Dataset',
+
+                data: [12, 19, 3, 5, 2, 3],
+
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+
+    });
+
+    var ctx = document.getElementById('kcaerChart').getContext('2d');
+    var kcaerChart = new Chart(ctx, {
+      // Chart configuration for KCAER data
+      type: 'line',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: 'Example Dataset',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+  </script>
+
+</body>
+</html>

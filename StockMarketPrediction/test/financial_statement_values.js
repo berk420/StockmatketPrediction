@@ -9,6 +9,13 @@ async function pass_click(driver,stock) {
 }
 module.exports = {
 
+  test:async function() {
+
+     return "hello";
+  },
+
+
+
  NakitveNakitBenzerleri_all:async function(driver,stock) {
     await driver.manage().window().maximize();
     await new Promise(resolve => setTimeout(resolve, 1000));

@@ -2,6 +2,7 @@ const {By, Builder } = require("selenium-webdriver");
 require("chromedriver"); 
 const { describe, it } = require('mocha');
 const addContext = require('mochawesome/addContext');
+
 const {
   toplam_oazkayank,
   Dönem_Net_Kar_Zararı,
@@ -11,9 +12,9 @@ const {
   ticari_alacaklar,
   NakitveNakitBenzerleri_all} 
   = require("./financial_statement_values.js");
+const fs = require('fs');
 
-const stocks_petrol = ["TUPRS"];
-const stocks_demirçelik = ["KCAER"];
+const stocks_petrol = ["TUPRS","KCAER"];
 
 describe("Petrol", async function () {
     stocks_petrol.forEach(stock =>{
@@ -24,14 +25,53 @@ describe("Petrol", async function () {
 
           await driver.get(`https://fintables.com/sirketler/${stock}/finansal-tablolar/bilanco`); 
 
-          let NakitveNakitBenzerleri_allss=await NakitveNakitBenzerleri_all(driver,stock);
 
-          //***
-          <h>berkkkkkkk</h>
-
-            
         })
+/*
+          const htmlContent = `
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Line Chart Example</title>
+          </head>
+          <body>
+              <canvas id="myChart"></canvas>
 
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+              <script>
+                  // JavaScript kodu ile line chart çizimi
+                  var ctx = document.getElementById('myChart').getContext('2d');
+                  var myChart = new Chart(ctx, {
+                      type: 'line',
+                      data: {
+                          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                          datasets: [{
+                              label: 'Example Dataset',
+                              data: [12, 19, 3, 5, 2, 3],
+                              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                              borderColor: 'rgba(255, 99, 132, 1)',
+                              borderWidth: 1
+                          }]
+                      },
+                      options: {
+                          scales: {
+                              y: {
+                                  beginAtZero: true
+                              }
+                          }
+                      }
+                  });
+              </script>
+          </body>
+          </html>
+          `;
+
+          // HTML dosyasını oluşturuyoruz
+          fs.writeFileSync('chart.html', htmlContent);
+*/
+        })
         it("fiyatKazancOrani", async function(){
           let driver = await new Builder().forBrowser('chrome').build();
 
@@ -122,10 +162,11 @@ describe("Petrol", async function () {
           await driver.quit();
             
         })
+
+        
     
       })
   })
-})
 
 
 describe("demir çelik", async function () {

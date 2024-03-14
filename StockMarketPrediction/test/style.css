@@ -1,0 +1,51 @@
+/* Genel stiller */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-top: 0;
+  }
+  
+  h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Kutu stiller */
+  
+  .kutu {
+    display: inline-block;
+    width: 300px;
+    margin-right: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+  }
+  
+  /* Renkler */
+  
+  .kutu h2 {
+    color: #333;
+  }
+  
+  .kutu ul li {
+    background-color: #f7f7f7;
+  }
+  
